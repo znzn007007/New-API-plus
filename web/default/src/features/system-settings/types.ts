@@ -163,6 +163,8 @@ export type ModelSettings = {
   AutoGroups: string
   DefaultUseAutoGroup: boolean
   'group_ratio_setting.group_special_usable_group': string
+  'group_ratio_setting.public_group_tag_ratio': string
+  'group_ratio_setting.public_group_model_tag': string
   'channel_affinity_setting.enabled': boolean
   'channel_affinity_setting.switch_on_success': boolean
   'channel_affinity_setting.max_entries': number
@@ -206,6 +208,8 @@ export type BillingSettings = {
   AutoGroups: string
   DefaultUseAutoGroup: boolean
   'group_ratio_setting.group_special_usable_group': string
+  'group_ratio_setting.public_group_tag_ratio': string
+  'group_ratio_setting.public_group_model_tag': string
   PayAddress: string
   EpayId: string
   EpayKey: string

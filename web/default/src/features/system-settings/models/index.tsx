@@ -61,6 +61,8 @@ const defaultModelSettings: ModelSettings = {
   AutoGroups: '',
   DefaultUseAutoGroup: false,
   'group_ratio_setting.group_special_usable_group': '{}',
+  'group_ratio_setting.public_group_tag_ratio': '{}',
+  'group_ratio_setting.public_group_model_tag': '{}',
   'channel_affinity_setting.enabled': false,
   'channel_affinity_setting.switch_on_success': true,
   'channel_affinity_setting.max_entries': 100000,
