@@ -8,6 +8,12 @@ upload
 build
 *.db-journal
 logs
+node_modules/
+web/default/dist
+web/classic/dist
+web/node_modules
+web/classic/node_modules
+web/default/node_modules
 web/dist
 .env
 one-api
@@ -19,10 +25,10 @@ tiktoken_cache
 .gocache
 .gomodcache/
 .cache
-web/bun.lock
 plans
 .claude
 .omx
+.cursor
 
 electron/node_modules
 electron/dist
