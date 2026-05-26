@@ -239,6 +239,7 @@ func Relay(c *gin.Context, relayFormat types.RelayFormat) {
 		case types.RelayFormatOpenAIRealtime:
 			newAPIError = relay.WssHelper(c, relayInfo)
 		case types.RelayFormatClaude:
+			relayInfo.ResetAttemptConversionMeta(tokens)
 			newAPIError = relay.ClaudeHelper(c, relayInfo)
 		case types.RelayFormatGemini:
 			newAPIError = geminiRelayHandler(c, relayInfo)

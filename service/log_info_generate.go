@@ -75,6 +75,7 @@ func GenerateTextOtherInfo(ctx *gin.Context, relayInfo *relaycommon.RelayInfo, m
 	other["admin_info"] = adminInfo
 	appendRequestPath(ctx, relayInfo, other)
 	appendRequestConversionChain(relayInfo, other)
+	appendRequestConversionMeta(relayInfo, other)
 	appendFinalRequestFormat(relayInfo, other)
 	appendEffectiveBillingDetails(relayInfo, other)
 	appendBillingInfo(relayInfo, other)
@@ -223,6 +224,13 @@ func appendRequestConversionChain(relayInfo *relaycommon.RelayInfo, other map[st
 		return
 	}
 	other["request_conversion"] = chain
+}
+
+func appendRequestConversionMeta(relayInfo *relaycommon.RelayInfo, other map[string]interface{}) {
+	if relayInfo == nil || other == nil || len(relayInfo.RequestConversionMeta) == 0 {
+		return
+	}
+	other["request_conversion_meta"] = relayInfo.RequestConversionMeta
 }
 
 func appendFinalRequestFormat(relayInfo *relaycommon.RelayInfo, other map[string]interface{}) {
