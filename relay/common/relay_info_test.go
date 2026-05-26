@@ -38,3 +38,13 @@ func TestRelayInfoGetFinalRequestRelayFormatNilReceiver(t *testing.T) {
 	var info *RelayInfo
 	require.Equal(t, types.RelayFormat(""), info.GetFinalRequestRelayFormat())
 }
+
+func TestRelayInfoAppendRequestConversionMeta(t *testing.T) {
+	info := &RelayInfo{}
+
+	info.AppendRequestConversionMeta(" assistant_prefill_continuation ")
+	info.AppendRequestConversionMeta("assistant_prefill_continuation")
+	info.AppendRequestConversionMeta("")
+
+	require.Equal(t, []string{"assistant_prefill_continuation"}, info.RequestConversionMeta)
+}
