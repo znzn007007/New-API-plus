@@ -631,6 +631,14 @@ func (info *RelayInfo) AppendRequestConversionMeta(marker string) {
 	info.RequestConversionMeta = append(info.RequestConversionMeta, marker)
 }
 
+func (info *RelayInfo) ResetAttemptConversionMeta(estimatePromptTokens int) {
+	if info == nil {
+		return
+	}
+	info.RequestConversionMeta = nil
+	info.SetEstimatePromptTokens(estimatePromptTokens)
+}
+
 func (info *RelayInfo) GetFinalRequestRelayFormat() types.RelayFormat {
 	if info == nil {
 		return ""

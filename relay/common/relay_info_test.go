@@ -48,3 +48,15 @@ func TestRelayInfoAppendRequestConversionMeta(t *testing.T) {
 
 	require.Equal(t, []string{"assistant_prefill_continuation"}, info.RequestConversionMeta)
 }
+
+func TestRelayInfoResetAttemptConversionMeta(t *testing.T) {
+	info := &RelayInfo{
+		RequestConversionMeta: []string{"assistant_prefill_continuation"},
+	}
+	info.SetEstimatePromptTokens(123)
+
+	info.ResetAttemptConversionMeta(99)
+
+	require.Empty(t, info.RequestConversionMeta)
+	require.Equal(t, 99, info.GetEstimatePromptTokens())
+}
